@@ -1,0 +1,2 @@
+[06-Jun-2016 21:24:09 Pacific/Auckland] PHP Warning:  Division by zero in /home/netzone/public_html/expedition/cms/classes/class_imageresizer.php on line 139
+[30-Jun-2017 15:25:33 Pacific/Auckland] PHP Warning:  file_get_contents( http://www.nzherald.co.nz/nz/news/article.cfm?c_id=1&amp;objectid=11881676  ): failed to open stream: No such file or directory in /home/netzone/arht.netzone.co.nz/cms/ajax/ajax_functions.php on line 113

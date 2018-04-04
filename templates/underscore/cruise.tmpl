@@ -1,0 +1,38 @@
+<% _.each(items, function(item){ itemIsShortlisted = ( shortlist.indexOf(item.token) > -1 ) %>
+<section class="list-item">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-7 col-sm-push-5">
+				<h3 class="serif"><a href="<%= item.uri %>" title="<%= item.title %>"><%= item.label %></a></h3>
+				<div class="cruise-detail">
+					<p class="price">From <%= item.currencyCode %> <%= item.currencySymbol %><%= item.rate %> <span>Per Person</span></p>
+					<p>
+						<span>DURATION:<span><%= item.noOfDays %> Days/ <%= item.noOfNights %> Nights</span></span>
+						<span>REGION:<span><%= item.regionLabel %></span></span>
+						<span>SHIP:<span><%= item.shipLabel %></span></span>
+					</p>
+				</div>
+				<p><%= item.details %></p>
+				<div class="btn-wrap">
+					<a href="<%= item.uri %>" title="<%= item.title %>" class="btn">Find Out More</a>
+					<a href="<%= item.uri %>#booking" title="Book <%= item.title %>" class="btn olight">Book Now</a>
+            		<a href="#" data-shortlist="<%= item.token %>" class="comp<%= ((itemIsShortlisted) ? ' added' : '') %>" title="<%= ((itemIsShortlisted) ? 'Remove from compare list.' : 'Add to compare list.') %>">
+            			<i class="glyphicons glyphicons-circle-<%= ((itemIsShortlisted) ? 'minus' : 'plus') %>"></i> 
+						<span><%= ((itemIsShortlisted) ? 'Remove' : 'Compare') %></span>
+            		</a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-5 col-sm-pull-7">
+				<figure class="img" style="background-image:url(<%= item.thumbPhoto %>);">
+					<% if( item.featured == 'Y' ) { %>
+				  	<span class="feat">Featured Expedition</span>
+				  	<% } %>
+				  	<% if( item.onSpecial == 'Y' ) { %>
+				  	<span class="spec"><i class="glyphicons glyphicons-star"></i> Special</span>
+				  	<% } %>
+			  	</figure>
+			</div>
+		</div>
+	</div>
+</section>
+<% }) %>
